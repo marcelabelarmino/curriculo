@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contratação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+            <a class="cabecalho__menu__link" href="skills.html">Skills</a>
+            <a class="cabecalho__menu__link" href="servicos.html">Serviços</a>
+        </nav>
+    </header>
+
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Formulário de Contratação - <b class="titulo-destaque">Freelancer</b></h1>
+            <p class="apresentacao__conteudo__texto">Preencha os campos abaixo com as suas necessidades, será um prazer ajudá-lo(a)!</p>
+
+            <form action="submit.php" method="POST" enctype="multipart/form-data" class="form-custom form-background">
+                <fieldset class="border p-3">
+                    <legend class="w-auto">Informações Pessoais</legend>
+
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome:</label>
+                        <input type="text" id="sobrenome" name="sobrenome" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" class="form-control" required></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border p-3 mt-4">
+                    <legend class="w-auto">Detalhes do Serviço</legend>
+
+                    <div class="form-group">
+                        <label for="lingua">Língua aplicada:</label>
+                        <select id="lingua" name="lingua" class="form-control" required>
+                            <option value="ingles">Inglês</option>
+                            <option value="espanhol">Espanhol</option>
+                            <option value="portugues">Português (pt-br)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prototipo">Upload do protótipo:</label>
+                        <input type="file" id="prototipo" name="prototipo" class="form-control" accept=".pdf,.doc,.docx,.jpeg,.png" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Linguagens preferidas:</label><br>
+                        <div class="form-check">
+                            <input type="checkbox" id="html" name="linguagens[]" value="HTML" class="form-check-input">
+                            <label for="html" class="form-check-label">HTML</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="css" name="linguagens[]" value="CSS" class="form-check-input">
+                            <label for="css" class="form-check-label">CSS</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="javascript" name="linguagens[]" value="JavaScript" class="form-check-input">
+                            <label for="javascript" class="form-check-label">JavaScript</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label>Banco de dados recomendado:</label><br>
+                        <div class="form-check">
+                            <input type="radio" id="mysql" name="banco" value="MySQL" class="form-check-input" required>
+                            <label for="mysql" class="form-check-label">MySQL</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="postgresql" name="banco" value="PostgreSQL" class="form-check-input">
+                            <label for="postgresql" class="form-check-label">Outro (incluir na mensagem).</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="turno">Turno preferido para reuniões:</label>
+                        <select id="turno" name="turno" class="form-control" required>
+                            <option value="manha">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noite">Noite</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario">Melhor horário para reuniões:</label>
+                        <input type="time" id="horario" name="horario" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="entrega">Previsão de entrega:</label>
+                        <input type="date" id="entrega" name="entrega" class="form-control" required>
+                    </div>
+                </fieldset>
+
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Marcela Belarmino.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
